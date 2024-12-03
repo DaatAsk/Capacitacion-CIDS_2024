@@ -1,0 +1,49 @@
+header {
+  background: #2d6a4f;
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding: 0.5rem 1rem;
+}
+
+button {
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  /* Efecto sombreado al hacer clic */
+}
+
+button:focus {
+  outline: none;
+  /* Quita el borde persistente del foco */
+  box-shadow: none;
+  /* Quita cualquier sombra de foco */
+  background-color: transparent;
+  /* Asegura que no haya cambio de color en el foco */
+}
+
+.header-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  max-height: 80%;
+  object-fit: cover;
+}
+
+mat-icon {
+  font-size: 2rem;
+}

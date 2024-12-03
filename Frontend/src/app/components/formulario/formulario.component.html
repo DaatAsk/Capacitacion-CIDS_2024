@@ -1,0 +1,44 @@
+<h2 class="form-title">{{ title }}</h2>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="centered-form">
+  <div *ngFor="let field of fields">
+    <mat-form-field *ngIf="field.type !== 'select' && field.type !== 'multi-select'">
+      <mat-label>{{ field.label }}</mat-label>
+      <input
+        *ngIf="field.type !== 'textarea'"
+        matInput
+        [type]="field.type"
+        [formControlName]="field.controlName"
+        [placeholder]="field.label"
+      />
+      <textarea
+        *ngIf="field.type === 'textarea'"
+        matInput
+        [formControlName]="field.controlName"
+        [placeholder]="field.label"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="field.type === 'select'">
+      <mat-label>{{ field.label }}</mat-label>
+      <mat-select [formControlName]="field.controlName">
+        <mat-option *ngFor="let option of field.options" [value]="option.value">
+          {{ option.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="field.type === 'multi-select'">
+      <mat-label>{{ field.label }}</mat-label>
+      <mat-select [formControlName]="field.controlName" multiple>
+        <mat-option *ngFor="let option of field.options" [value]="option.value">
+          {{ option.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="button-group">
+    <button mat-fab extended class="submit-button" type="submit">Submit</button>
+    <button mat-fab extended class="cancel-button" type="button" (click)="onCancel()">Cancelar</button>
+  </div>
+</form>

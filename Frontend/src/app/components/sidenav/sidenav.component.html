@@ -1,0 +1,23 @@
+<mat-nav-list class="nav-list">
+  <div class="nav-header">
+    <span class="nav-title">Menu</span>
+    <mat-icon class="close-icon" (click)="onClose()">close</mat-icon>
+  </div>
+  <div class="divider"></div>
+  <a mat-list-item routerLink="/home" routerLinkActive="active">
+    <mat-icon class="nav-icon">home</mat-icon>
+    <span class="nav-text">Home</span>
+  </a>
+  <a mat-list-item routerLink="/proyectos" routerLinkActive="active">
+    <mat-icon class="nav-icon">work</mat-icon>
+    <span class="nav-text">Proyectos</span>
+  </a>
+  <a mat-list-item routerLink="/desarrolladores" routerLinkActive="active">
+    <mat-icon class="nav-icon">work</mat-icon>
+    <span class="nav-text">Desarrolladores</span>
+  </a>
+  <a mat-list-item routerLink="/desarrolladores" routerLinkActive="active">
+    <mat-icon class="nav-icon">work</mat-icon>
+    <span class="nav-text">Tareas</span>
+  </a>
+</mat-nav-list>

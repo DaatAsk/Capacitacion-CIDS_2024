@@ -1,0 +1,22 @@
+# Normalizar todos los archivos de texto a LF
+* text=auto
+
+# Asegurar que ciertos archivos tengan CRLF (si se usan en Windows)
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Asegurar que otros archivos tengan LF
+*.sh text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.ts text eol=lf
+*.js text eol=lf
+
+# Binarios no se convierten
+*.png binary
+*.jpg binary
+*.gif binary
+*.exe binary
+*.dll binary
